@@ -1,0 +1,45 @@
+name: Track prices
+
+on:
+  schedule:
+    # Twice a day. Odd minutes on purpose: GitHub delays/skips jobs queued at
+    # busy times like the top of the hour.
+    - cron: "17 9 * * *"
+    - cron: "43 17 * * *"
+  workflow_dispatch: {}
+
+# Never let two runs interleave (a manual run during a scheduled one would
+# race on the history commit).
+concurrency:
+  group: track-prices
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  track:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - run: pip install -r requirements.txt
+
+      - name: Run tracker
+        env:
+          NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
+        run: python run.py -v
+
+      - name: Commit price history
+        run: |
+          git config user.name "price-tracker-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/
+          git diff --cached --quiet || git commit -m "price data $(date -u +%F-%H%M)"
+          git push

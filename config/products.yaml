@@ -1,0 +1,76 @@
+# Tracked products.
+#
+# A "product" is the thing you actually want (one SKU, ideally the same SKU
+# across shops so prices are comparable). Each listing is one shop's page for
+# it. Deal detection runs on the best in-stock price across a product's
+# listings.
+#
+# site must match a parser key registered in pricetracker/parsers/
+# (currently: scan, novatech, awdit).
+#
+# All settings are optional; defaults live in pricetracker/deals.py.
+
+settings:
+  lookback_days: 30        # window for "recent history"
+  min_history_days: 14     # days of data before the main signals activate
+  min_drop_pct: 2.0        # rolling-low must undercut the old low by this much
+  median_drop_pct: 10.0    # sharp-discount signal vs trailing median
+  bootstrap_min_days: 7    # early all-time-low signal needs at least this much
+  bootstrap_drop_pct: 5.0
+  cooldown_days: 3         # quiet period after an alert...
+  cooldown_break_pct: 3.0  # ...unless price drops this much further
+
+products:
+  # ---------------- GPUs ----------------
+  - id: rtx5070-asus-dual-oc
+    name: ASUS Dual RTX 5070 OC 12GB
+    listings:
+      - site: scan
+        url: https://www.scan.co.uk/products/asus-dual-nvidia-geforce-rtx-5070-oc-12gb-gddr7-ray-tracing-graphics-card-dlss-4-6144-core-2572-mhz
+      - site: novatech
+        url: https://www.novatech.co.uk/products/asus-nvidia-geforce-rtx-5070-dual-oc-12gb-gddr7-graphics-card/90yv0m17-m0na00.html
+      - site: awdit
+        url: https://www.awd-it.co.uk/asus-dual-geforce-rtx-5070-12gb-gddr7-oc-edition-graphics-card-90yv0m17-m0na00.html
+
+  - id: rtx5070ti-gigabyte-windforce-oc
+    name: Gigabyte RTX 5070 Ti Windforce OC 16GB
+    listings:
+      - site: novatech
+        url: https://www.novatech.co.uk/products/gigabyte-nvidia-geforce-rtx-5070-ti-windforce-oc-sff-16gb-gddr7-graphics-card/gv-n507twf3ocv2-16gd.html
+      - site: awdit
+        url: https://www.awd-it.co.uk/gigabyte-geforce-rtx-5070-ti-windforce-oc-v2-16gb-gddr7-graphics-card-n507twf3ocv2-16gd.html
+
+  - id: rx9070-gigabyte-gaming-oc
+    name: Gigabyte RX 9070 Gaming OC 16GB
+    listings:
+      - site: scan
+        url: https://www.scan.co.uk/products/gigabyte-radeon-rx-9070-gaming-oc-16gb-gddr6-graphics-card-rdna4-3584-streams-tbc-mhz-boost
+      - site: novatech
+        url: https://www.novatech.co.uk/products/gigabyte-amd-radeon-rx-9070-gaming-oc-16gb-gddr6-graphics-card/gv-r9070gamingoc-16gd.html
+
+  - id: rx9070xt-asus-prime-oc
+    name: ASUS Prime RX 9070 XT OC 16GB
+    listings:
+      - site: scan
+        url: https://www.scan.co.uk/products/asus-radeon-rx-9070-xt-prime-oc-16gb-gddr6-graphics-card-rdna-4-4096-streams-tbc-boost
+      - site: novatech
+        url: https://www.novatech.co.uk/products/asus-amd-radeon-rx-9070-xt-prime-oc-16gb-gddr6-graphics-card/90yv0l71-m0na00.html
+
+  # ---------------- RAM (DDR5 32GB, 6000 MT/s) ----------------
+  - id: ram-corsair-vengeance-6000-cl30
+    name: Corsair Vengeance 32GB DDR5-6000 CL30
+    listings:
+      - site: scan
+        url: https://www.scan.co.uk/products/32gb-2x16gb-corsair-ddr5-vengeance-black-pc5-48000-6000-non-ecc-unbuffered-cas-30-xmp-30-14v
+
+  - id: ram-gskill-tz5-neo-6000-cl30
+    name: G.Skill Trident Z5 Neo 32GB DDR5-6000 CL30
+    listings:
+      - site: awdit
+        url: https://www.awd-it.co.uk/g-skill-trident-tz5-neo-32gb-16gb-x2-ddr5-6000mhz-cl30-f5-6000j3038f16gx2-tz5n.html
+
+  - id: ram-klevv-cras-v-6000-cl30
+    name: Klevv Cras V RGB 32GB DDR5-6000 CL30
+    listings:
+      - site: novatech
+        url: https://www.novatech.co.uk/products/klevv-cras-v-rgb-32gb-2x16gb-6000mhz-cl30-memory-ram-kit/kd5agua80-60a300g.html
