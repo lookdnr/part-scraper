@@ -1,9 +1,14 @@
 {
-  "alerts": {},
+  "alerts": {
+    "ram-gskill-tz5-neo-6000-cl30": {
+      "date": "2026-07-20",
+      "price": 500.0
+    }
+  },
   "failures": {
-    "ram-corsair-vengeance-6000-cl30__scan": 14,
-    "rtx5070-asus-dual-oc__scan": 14,
-    "rx9070-gigabyte-gaming-oc__scan": 14,
-    "rx9070xt-asus-prime-oc__scan": 14
+    "ram-corsair-vengeance-6000-cl30__scan": 15,
+    "rtx5070-asus-dual-oc__scan": 15,
+    "rx9070-gigabyte-gaming-oc__scan": 15,
+    "rx9070xt-asus-prime-oc__scan": 15
   }
 }
