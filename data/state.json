@@ -6,9 +6,9 @@
     }
   },
   "failures": {
-    "ram-corsair-vengeance-6000-cl30__scan": 30,
-    "rtx5070-asus-dual-oc__scan": 30,
-    "rx9070-gigabyte-gaming-oc__scan": 30,
-    "rx9070xt-asus-prime-oc__scan": 30
+    "ram-corsair-vengeance-6000-cl30__scan": 31,
+    "rtx5070-asus-dual-oc__scan": 31,
+    "rx9070-gigabyte-gaming-oc__scan": 31,
+    "rx9070xt-asus-prime-oc__scan": 31
   }
 }
