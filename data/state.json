@@ -6,14 +6,14 @@
     }
   },
   "failures": {
-    "ram-corsair-vengeance-6000-cl30__scan": 88,
-    "ram-klevv-cras-v-6000-cl30__novatech": 44,
-    "rtx5070-asus-dual-oc__novatech": 52,
-    "rtx5070-asus-dual-oc__scan": 88,
-    "rtx5070ti-gigabyte-windforce-oc__novatech": 44,
-    "rx9070-gigabyte-gaming-oc__novatech": 44,
-    "rx9070-gigabyte-gaming-oc__scan": 88,
-    "rx9070xt-asus-prime-oc__novatech": 44,
-    "rx9070xt-asus-prime-oc__scan": 88
+    "ram-corsair-vengeance-6000-cl30__scan": 89,
+    "ram-klevv-cras-v-6000-cl30__novatech": 45,
+    "rtx5070-asus-dual-oc__novatech": 53,
+    "rtx5070-asus-dual-oc__scan": 89,
+    "rtx5070ti-gigabyte-windforce-oc__novatech": 45,
+    "rx9070-gigabyte-gaming-oc__novatech": 45,
+    "rx9070-gigabyte-gaming-oc__scan": 89,
+    "rx9070xt-asus-prime-oc__novatech": 45,
+    "rx9070xt-asus-prime-oc__scan": 89
   }
 }
